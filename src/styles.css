@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.cat-info {
+  margin-top: 20px;
+  height: 500px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cat-info img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+}
+
+.cat-info p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.loader {
+  font-weight: bold;
+}
+
+.cat-name {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.cat-temp {
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+}
