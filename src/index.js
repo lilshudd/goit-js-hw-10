@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     loader.style.display = 'none';
   };
 
+  error.style.display = 'none';
+
   const hideContent = () => {
     catInfoContainer.innerHTML = '';
     catInfoContainer.style.display = 'none';
