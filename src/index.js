@@ -11,6 +11,28 @@ document.addEventListener('DOMContentLoaded', async () => {
     loader.style.display = 'none';
   };
 
+  const hideContent = () => {
+    catInfoContainer.innerHTML = '';
+    catInfoContainer.style.display = 'none';
+  };
+
+  const showContent = () => {
+    catInfoContainer.style.display = 'flex';
+  };
+
+  const handleNetworkChange = () => {
+    if (!navigator.onLine) {
+      showError();
+      hideContent();
+    } else {
+      error.style.display = 'none';
+      showContent();
+    }
+  };
+
+  window.addEventListener('online', handleNetworkChange);
+  window.addEventListener('offline', handleNetworkChange);
+
   try {
     loader.style.display = 'block';
 
@@ -47,13 +69,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         catInfoContainer.appendChild(catDetails);
 
         loader.style.display = 'none';
+        showContent();
       } catch (error) {
         console.error('Error fetching cat info:', error);
         showError();
+        hideContent();
       }
     });
   } catch (error) {
     console.error('Error fetching breeds:', error);
     showError();
+    hideContent();
   }
 });
